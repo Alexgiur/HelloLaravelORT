@@ -8,6 +8,7 @@
         <tr>
             <th>ID</th>
             <th>Title</th>
+            <th>Author</th>
             <th class="hidden md:block">Publication date</th>
             @auth
                 <th>Modifier</th>
@@ -18,6 +19,7 @@
             <tr>
                 <td>{{ $article->id }}</td>
                 <td><a href="/articles/{{ $article->id }}"> {{ $article->title }}</a></td>
+                <td style="padding-right: 10px">{{ $article->user->name }}</td>
                 <td class="hidden md:block">{{ $article->published_at }}</td>
                 @auth
                     <td><a href="/articles/{{ $article->id }}/edit" class="btn btn-primary">Modifier</a></td>

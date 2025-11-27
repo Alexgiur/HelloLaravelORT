@@ -10,8 +10,7 @@ class ArticleController extends Controller
     // 7 resource controller actions
     public function index()
     {
-        $articles = Article::all();
-
+        $articles = Article::where('user_id', 1)->with('user')->get();
         return view('index', compact('articles'));
     }
 

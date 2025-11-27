@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Livewire\Counter;
 use App\Models\Article;
 use App\Models\User;
 use Illuminate\Support\Facades\App;
@@ -43,3 +44,6 @@ Route::delete('/articles/{article}', [ArticleController::class, 'destroy']);
 Route::get('/test', function() {
     dd(App::currentLocale());
 });
+
+
+Route::get('/counter/{user}', Counter::class);
